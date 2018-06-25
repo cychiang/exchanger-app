@@ -1,0 +1,24 @@
+name: exchanger
+
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.5.2"
+
+flutter:
+  uses-material-design: true
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path_android: "assets/icon/android/chocotv_icon.png"
+  image_path_ios: "assets/icon/ios/chocotv_icon.png"
