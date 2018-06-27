@@ -8,28 +8,24 @@ class App extends StatelessWidget {
     return new MaterialApp(
       title: 'Exchanger',
       theme: new ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
-      home: new HomePage(title: 'HomePage'),
+      home: new DefaultTabController(length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(tabs: [
+              Tab(icon: Icon(Icons.directions_car)),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],),
+            title: Text('CHOCO TV'),
+          ),
+        ),
+      )
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-  final String title;
+class HomePageTabViews extends DefaultTabController {
 
-  @override
-  _HomePageState createState() => new _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
-      ),
-    );
-  }
 }
