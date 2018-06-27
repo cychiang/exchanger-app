@@ -1,0 +1,3 @@
+[submodule "exchanger-protos"]
+	path = exchanger-protos
+	url = git@github.com:cychiang/exchanger-protos.git
