@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
+import 'app/index.dart';
+import 'app/exchangerProvider.dart';
+import 'models/exchangerBloc.dart';
+import 'models/grpc_api.dart';
 
-void main() => runApp(new App());
+void main() => runApp(new Main());
 
-class App extends StatelessWidget {
+class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Exchanger',
-      theme: new ThemeData(
-        primarySwatch: Colors.pink,
+    return ExchangerProvider(
+      exchangerBloc: ExchangerBloc(API()),
+      child: MaterialApp(
+        home: XHome(),
       ),
-      home: new DefaultTabController(length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
-            ],),
-            title: Text('CHOCO TV'),
-          ),
-        ),
-      )
     );
   }
-}
-
-class HomePageTabViews extends DefaultTabController {
-
 }
