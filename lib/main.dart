@@ -12,6 +12,8 @@ class Main extends StatelessWidget {
     return ExchangerProvider(
       exchangerBloc: ExchangerBloc(API()),
       child: MaterialApp(
+        title: 'Exchanger',
+        theme: ThemeData(),
         home: XHome(),
       ),
     );
