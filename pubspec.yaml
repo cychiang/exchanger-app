@@ -7,11 +7,11 @@ version: 1.0.0+1
 dependencies:
   flutter:
     sdk: flutter
-  grpc: '^0.4.1'
-  protobuf: '^0.7.0'
-  async: '>=1.13.3 <3.0.0'
+  grpc: "^0.4.1"
+  protobuf: "^0.7.0"
+  async: ">=1.13.3 <3.0.0"
   cupertino_icons: "^0.1.2"
-  open_exchange_rates: "^0.0.3"
+  rxdart: "^0.18.1"
 
 dev_dependencies:
   flutter_test:

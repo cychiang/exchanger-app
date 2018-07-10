@@ -7,7 +7,7 @@ class API {
   ClientChannel channel;
   OpenExchangerClient stub;
   API() {
-    channel = new ClientChannel('0.0.0.0',
+    channel = new ClientChannel('localhost',
         port: 8080,
         options: const ChannelOptions(
             credentials: const ChannelCredentials.insecure()));
@@ -16,10 +16,14 @@ class API {
   }
 
   Future<List<GrpcRate>> get(String query) async {
-    final request = new OxrInput();
+    OxrInput request = new OxrInput()..symbols="JPY,TWD";
     List<GrpcRate> list = [];
     await for (GrpcRate rate in stub.getOxrLatest(request)) {
-      list.add(rate);
+      if (rate.currency == "null") {
+        break;
+      } else {
+        list.add(GrpcRate()..currency=rate.currency..ratio=rate.ratio);
+      }
     }
     return list;
   }

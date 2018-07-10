@@ -24,7 +24,6 @@ class ExchangerBloc {
   }
 
   void dispose() {
-    _query.close();
-    api.channel.shutdown();
+    print('dispose');
   }
 }

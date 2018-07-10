@@ -9,3 +9,6 @@ build/
 .flutter-plugins
 
 .idea/
+
+# ignore shareddata
+ios/Runner.xcworkspace/xcshareddata/

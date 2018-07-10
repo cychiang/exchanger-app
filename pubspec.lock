@@ -249,13 +249,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.4.2"
-  open_exchange_rates:
-    dependency: "direct main"
-    description:
-      name: open_exchange_rates
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3"
   package_config:
     dependency: transitive
     description:
@@ -320,7 +313,7 @@ packages:
     source: hosted
     version: "0.29.0+1"
   rxdart:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: rxdart
       url: "https://pub.dartlang.org"
