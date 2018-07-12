@@ -10,5 +10,7 @@ build/
 
 .idea/
 
+pubspec.lock
+
 # ignore shareddata
 ios/Runner.xcworkspace/xcshareddata/

@@ -24,6 +24,6 @@ class ExchangerBloc {
   }
 
   void dispose() {
-    print('dispose');
+    _query.close();
   }
 }

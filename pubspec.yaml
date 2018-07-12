@@ -12,6 +12,7 @@ dependencies:
   async: ">=1.13.3 <3.0.0"
   cupertino_icons: "^0.1.2"
   rxdart: "^0.18.1"
+  currency_icons: "^0.0.1"
 
 dev_dependencies:
   flutter_test:

@@ -41,6 +41,7 @@ class XHome extends StatelessWidget {
                   return ListView.builder(
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, index) => ListTile(
+                          leading: Image.asset('icons/currency/${snapshot.data[index].currency.toLowerCase()}.png', package: 'currency_icons'),
                           title: Text(snapshot.data[index].currency),
                           subtitle: Text(snapshot.data[index].ratio.toString()),
                         ),
