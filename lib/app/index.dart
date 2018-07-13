@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'exchangerProvider.dart';
-
-// TODO: currency flags
+import '../view/card.dart';
 
 class XHome extends StatelessWidget {
   @override
@@ -13,6 +12,7 @@ class XHome extends StatelessWidget {
         title: const Text('Exchanger'),
       ),
       body: Column(
+
         children: <Widget>[
           Container(
             padding: EdgeInsets.all(10.0),
@@ -24,12 +24,6 @@ class XHome extends StatelessWidget {
               ),
             ),
           ),
-          StreamBuilder(
-            stream: exchangerBloc.log,
-            builder: (context, snapshot) => Container(
-                  child: Text(snapshot?.data ?? ''),
-                ),
-          ),
           Flexible(
             child: StreamBuilder(
                 stream: exchangerBloc.results,
@@ -40,11 +34,7 @@ class XHome extends StatelessWidget {
                     );
                   return ListView.builder(
                     itemCount: snapshot.data.length,
-                    itemBuilder: (context, index) => ListTile(
-                          leading: Image.asset('icons/currency/${snapshot.data[index].currency.toLowerCase()}.png', package: 'currency_icons'),
-                          title: Text(snapshot.data[index].currency),
-                          subtitle: Text(snapshot.data[index].ratio.toString()),
-                        ),
+                    itemBuilder: (context, index) => CurrencyCard(grpcRate: snapshot.data[index]),
                   );
                 }),
           )
