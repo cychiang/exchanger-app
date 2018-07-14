@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../src/generated/protos/open_exchanger.pb.dart';
+import '../protos/open_exchanger.pb.dart';
 
 class CurrencyCard extends StatelessWidget {
   // init Currency

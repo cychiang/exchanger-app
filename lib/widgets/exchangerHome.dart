@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'exchangerProvider.dart';
-import '../view/card.dart';
+import 'package:exchanger/widgets/card.dart';
 
-class XHome extends StatelessWidget {
+class XChangerHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final exchangerBloc = ExchangerProvider.of(context);
@@ -12,7 +12,6 @@ class XHome extends StatelessWidget {
         title: const Text('Exchanger'),
       ),
       body: Column(
-
         children: <Widget>[
           Container(
             padding: EdgeInsets.all(10.0),

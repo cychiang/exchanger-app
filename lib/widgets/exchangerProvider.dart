@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import '../models/exchangerBloc.dart';
-import '../models/grpc_api.dart';
+import '../blocs/exchangerBloc.dart';
+import '../apis/grpc_api.dart';
 
 class ExchangerProvider extends InheritedWidget {
   final ExchangerBloc exchangerBloc;

@@ -7,8 +7,8 @@ import 'dart:async';
 
 import 'package:grpc/grpc.dart';
 
-import 'open_exchanger.pb.dart';
-export 'open_exchanger.pb.dart';
+import 'package:exchanger/protos/open_exchanger.pb.dart';
+export 'package:exchanger/protos/open_exchanger.pb.dart';
 
 class OpenExchangerClient extends Client {
   static final _$getOxrLatest = new ClientMethod<OxrInput, GrpcRate>(

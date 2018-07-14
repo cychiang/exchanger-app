@@ -1,7 +1,8 @@
 import "dart:async";
-import "grpc_api.dart";
+import "package:exchanger/apis/grpc_api.dart";
 import 'package:rxdart/rxdart.dart';
-import '../src/generated/protos/open_exchanger.pb.dart';
+import '../protos/open_exchanger.pb.dart';
+import '../apis/grpc_api.dart';
 
 class ExchangerBloc {
   final API api;
