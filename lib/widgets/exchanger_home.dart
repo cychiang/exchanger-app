@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'exchangerProvider.dart';
-import 'package:exchanger/widgets/card.dart';
+import 'package:exchanger/widgets/currency_card.dart';
+import 'package:exchanger/widgets/exchanger_provider.dart';
 
 class XChangerHome extends StatelessWidget {
   @override

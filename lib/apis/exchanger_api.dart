@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:grpc/grpc.dart';
-import '../protos/open_exchanger.pb.dart';
-import '../protos/open_exchanger.pbgrpc.dart';
+import 'package:exchanger/protos/open_exchanger.pb.dart';
+import 'package:exchanger/protos/open_exchanger.pbgrpc.dart';
 
 class API {
   ClientChannel channel;

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'widgets/exchangerHome.dart';
-import 'widgets/exchangerProvider.dart';
-import 'blocs/exchangerBloc.dart';
-import 'apis/grpc_api.dart';
+import 'package:exchanger/apis/exchanger_api.dart';
+import 'package:exchanger/blocs/exchanger_bloc.dart';
+import 'package:exchanger/widgets/exchanger_home.dart';
+import 'package:exchanger/widgets/exchanger_provider.dart';
+
 
 void main() => runApp(new Main());
 
