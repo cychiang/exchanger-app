@@ -1,11 +1,13 @@
 import 'dart:async';
-import 'package:grpc/grpc.dart';
+
 import 'package:exchanger/protos/open_exchanger.pb.dart';
 import 'package:exchanger/protos/open_exchanger.pbgrpc.dart';
+import 'package:grpc/grpc.dart';
 
 class API {
   ClientChannel channel;
   OpenExchangerClient stub;
+
   API() {
     channel = new ClientChannel('localhost',
         port: 8080,
@@ -16,13 +18,17 @@ class API {
   }
 
   Future<List<GrpcRate>> get(String query) async {
-    OxrInput request = new OxrInput()..symbols="JPY,USD,SEK"..base="TWD";
+    OxrInput request = new OxrInput()
+      ..symbols = "JPY,USD,SEK"
+      ..base = "TWD";
     List<GrpcRate> list = [];
     await for (GrpcRate rate in stub.getOxrLatest(request)) {
       if (rate.currency == "null") {
         break;
       } else {
-        list.add(GrpcRate()..currency=rate.currency..ratio=rate.ratio);
+        list.add(GrpcRate()
+          ..currency = rate.currency
+          ..ratio = rate.ratio);
       }
     }
     return list;

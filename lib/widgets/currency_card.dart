@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:exchanger/protos/open_exchanger.pb.dart';
+import 'package:flutter/material.dart';
 
 class CurrencyCard extends StatelessWidget {
   // init Currency
@@ -13,10 +13,12 @@ class CurrencyCard extends StatelessWidget {
       child: new Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-            ListTile(
-              leading: Image.asset('icons/currency/${grpcRate.currency.toLowerCase()}.png', package: 'currency_icons'),
-              title: Text(grpcRate.currency),
-              subtitle: Text(grpcRate.ratio.toString()),
+          ListTile(
+            leading: Image.asset(
+                'icons/currency/${grpcRate.currency.toLowerCase()}.png',
+                package: 'currency_icons'),
+            title: Text(grpcRate.currency),
+            subtitle: Text(grpcRate.ratio.toString()),
           ),
         ],
       ),

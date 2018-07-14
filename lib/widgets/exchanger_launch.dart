@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class ExchangerLaunch extends StatefulWidget {
@@ -7,7 +8,6 @@ class ExchangerLaunch extends StatefulWidget {
 }
 
 class _ExchangerLaunchState extends State<ExchangerLaunch> {
-
   startTime() async {
     var _duration = new Duration(seconds: 2);
     return new Timer(_duration, homePage);

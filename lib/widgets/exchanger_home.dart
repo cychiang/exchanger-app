@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:exchanger/widgets/currency_card.dart';
 import 'package:exchanger/widgets/exchanger_provider.dart';
-
+import 'package:flutter/material.dart';
 
 class ExchangerHome extends StatefulWidget {
   _ExchangerHomeState createState() => new _ExchangerHomeState();
@@ -38,7 +37,8 @@ class _ExchangerHomeState extends State<ExchangerHome> {
                     );
                   return ListView.builder(
                     itemCount: snapshot.data.length,
-                    itemBuilder: (context, index) => CurrencyCard(grpcRate: snapshot.data[index]),
+                    itemBuilder: (context, index) =>
+                        CurrencyCard(grpcRate: snapshot.data[index]),
                   );
                 }),
           )
@@ -47,4 +47,3 @@ class _ExchangerHomeState extends State<ExchangerHome> {
     );
   }
 }
-

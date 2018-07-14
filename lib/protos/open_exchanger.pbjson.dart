@@ -10,7 +10,13 @@ const OxrInput$json = const {
     const {'1': 'Symbols', '3': 2, '4': 1, '5': 9, '10': 'Symbols'},
     const {'1': 'Date', '3': 3, '4': 1, '5': 9, '10': 'Date'},
     const {'1': 'Prettyprint', '3': 4, '4': 1, '5': 8, '10': 'Prettyprint'},
-    const {'1': 'ShowAlternative', '3': 5, '4': 1, '5': 8, '10': 'ShowAlternative'},
+    const {
+      '1': 'ShowAlternative',
+      '3': 5,
+      '4': 1,
+      '5': 8,
+      '10': 'ShowAlternative'
+    },
     const {'1': 'ShowInactive', '3': 6, '4': 1, '5': 8, '10': 'ShowInactive'},
   ],
 };
@@ -30,4 +36,3 @@ const GrpcCurrency$json = const {
     const {'1': 'Name', '3': 2, '4': 1, '5': 9, '10': 'Name'},
   ],
 };
-

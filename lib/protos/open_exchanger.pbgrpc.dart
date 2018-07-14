@@ -5,10 +5,14 @@
 
 import 'dart:async';
 
+import 'package:exchanger/protos/open_exchanger.pb.dart';
 import 'package:grpc/grpc.dart';
 
-import 'package:exchanger/protos/open_exchanger.pb.dart';
 export 'package:exchanger/protos/open_exchanger.pb.dart';
+//  Generated code. Do not modify.
+///
+// ignore_for_file: non_constant_identifier_names,library_prefixes
+
 
 class OpenExchangerClient extends Client {
   static final _$getOxrLatest = new ClientMethod<OxrInput, GrpcRate>(
@@ -93,6 +97,8 @@ abstract class OpenExchangerServiceBase extends Service {
   }
 
   Stream<GrpcRate> getOxrLatest(ServiceCall call, OxrInput request);
+
   Stream<GrpcRate> getOxrHistorical(ServiceCall call, OxrInput request);
+
   Stream<GrpcCurrency> getOxrCurrencies(ServiceCall call, OxrInput request);
 }

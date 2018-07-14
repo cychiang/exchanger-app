@@ -1,7 +1,8 @@
 import "dart:async";
-import 'package:rxdart/rxdart.dart';
+
 import "package:exchanger/apis/exchanger_api.dart";
 import 'package:exchanger/protos/open_exchanger.pb.dart';
+import 'package:rxdart/rxdart.dart';
 
 class ExchangerBloc {
   final API api;
@@ -12,7 +13,9 @@ class ExchangerBloc {
   ReplaySubject<String> _query = ReplaySubject<String>();
 
   Stream<List<GrpcRate>> get results => _results;
+
   Stream<String> get log => _log;
+
   Sink<String> get query => _query;
 
   ExchangerBloc(this.api) {
