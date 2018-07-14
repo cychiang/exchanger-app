@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:exchanger/widgets/currency_card.dart';
 import 'package:exchanger/widgets/exchanger_provider.dart';
 
-class XChangerHome extends StatelessWidget {
+
+class ExchangerHome extends StatefulWidget {
+  _ExchangerHomeState createState() => new _ExchangerHomeState();
+}
+
+class _ExchangerHomeState extends State<ExchangerHome> {
   @override
   Widget build(BuildContext context) {
     final exchangerBloc = ExchangerProvider.of(context);
@@ -19,7 +24,7 @@ class XChangerHome extends StatelessWidget {
               onChanged: exchangerBloc.query.add,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Search for a Movie',
+                hintText: 'Search for something',
               ),
             ),
           ),
@@ -42,3 +47,4 @@ class XChangerHome extends StatelessWidget {
     );
   }
 }
+
