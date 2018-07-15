@@ -10,13 +10,13 @@ class ExchangerBloc {
   Stream<List<GrpcRate>> _results = Stream.empty();
   Stream<String> _log = Stream.empty();
 
-  ReplaySubject<String> _query = ReplaySubject<String>();
+  ReplaySubject<OxrInput> _query = ReplaySubject<OxrInput>();
 
   Stream<List<GrpcRate>> get results => _results;
 
   Stream<String> get log => _log;
 
-  Sink<String> get query => _query;
+  Sink<OxrInput> get query => _query;
 
   ExchangerBloc(this.api) {
     _results = _query.distinct().asyncMap(api.get).asBroadcastStream();

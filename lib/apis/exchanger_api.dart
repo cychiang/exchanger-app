@@ -17,12 +17,9 @@ class API {
         options: new CallOptions(timeout: new Duration(seconds: 30)));
   }
 
-  Future<List<GrpcRate>> get(String query) async {
-    OxrInput request = new OxrInput()
-      ..symbols = "JPY,USD,SEK"
-      ..base = "TWD";
+  Future<List<GrpcRate>> get(OxrInput query) async {
     List<GrpcRate> list = [];
-    await for (GrpcRate rate in stub.getOxrLatest(request)) {
+    await for (GrpcRate rate in stub.getOxrLatest(query)) {
       if (rate.currency == "null") {
         break;
       } else {
