@@ -1,5 +1,6 @@
 import 'package:exchanger/widgets/currency_card.dart';
 import 'package:exchanger/widgets/exchanger_provider.dart';
+import 'package:exchanger/widgets/exchanger_card_swipe.dart';
 import 'package:exchanger/protos/open_exchanger.pb.dart';
 import 'package:flutter/material.dart';
 
@@ -25,17 +26,39 @@ class _ExchangerHomeState extends State<ExchangerHome> {
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     // Query data
+                    print('Hi');
                     exchangerBloc.query.add(OxrInput()
-                      ..base='TWD'
-                      ..symbols='SEK,JPY,USD');
+                      ..base = 'TWD'
+                      ..symbols = 'SEK,JPY,USD');
                     return Center(
                       child: CircularProgressIndicator(),
                     );
                   }
                   return ListView.builder(
                     itemCount: snapshot.data.length,
-                    itemBuilder: (context, index) =>
-                        CurrencyCard(grpcRate: snapshot.data[index]),
+                    itemBuilder: (context, index) {
+                      return new OnSlide(
+                        items: <ActionItems>[
+                          new ActionItems(
+                              icon: new IconButton(
+                                icon: new Icon(Icons.save),
+                                onPressed: () {},
+                                color: Colors.blue,
+                              ),
+                              onPress: () {},
+                              backgroudColor: Colors.white),
+                          new ActionItems(
+                              icon: new IconButton(
+                                icon: new Icon(Icons.bookmark),
+                                onPressed: () {},
+                                color: Colors.orange,
+                              ),
+                              onPress: () {},
+                              backgroudColor: Colors.white),
+                        ],
+                        child: CurrencyCard(grpcRate: snapshot.data[index]),
+                      );
+                    },
                   );
                 }),
           )
