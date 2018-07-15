@@ -4,6 +4,9 @@ import 'package:exchanger/protos/open_exchanger.pb.dart';
 import 'package:exchanger/protos/open_exchanger.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
+// 10.0.2.2: Android for localhost
+// localhost: iOS
+
 class API {
   ClientChannel channel;
   OpenExchangerClient stub;
