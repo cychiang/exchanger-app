@@ -27,7 +27,6 @@ class _ExchangerLaunchState extends State<ExchangerLaunch> {
 
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
       body: new Center(
         child: new Image.asset('assets/logo/flutter.png'),

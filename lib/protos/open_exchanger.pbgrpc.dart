@@ -13,7 +13,6 @@ export 'package:exchanger/protos/open_exchanger.pb.dart';
 ///
 // ignore_for_file: non_constant_identifier_names,library_prefixes
 
-
 class OpenExchangerClient extends Client {
   static final _$getOxrLatest = new ClientMethod<OxrInput, GrpcRate>(
       '/openexchanger.OpenExchanger/GetOxrLatest',

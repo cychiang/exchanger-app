@@ -46,7 +46,7 @@ class _ExchangerHomeState extends State<ExchangerHome> {
                                 color: Colors.blue,
                               ),
                               onPress: () {},
-                              backgroudColor: Colors.white),
+                              backgroundColor: Colors.white),
                           new ActionItems(
                               icon: new IconButton(
                                 icon: new Icon(Icons.bookmark),
@@ -54,7 +54,7 @@ class _ExchangerHomeState extends State<ExchangerHome> {
                                 color: Colors.orange,
                               ),
                               onPress: () {},
-                              backgroudColor: Colors.white),
+                              backgroundColor: Colors.white),
                         ],
                         child: CurrencyCard(grpcRate: snapshot.data[index]),
                       );

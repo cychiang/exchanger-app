@@ -6,12 +6,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-
 typedef void SizeChangedCallBack(Size newSize);
 
-
-class LayoutSizeChangeNotification extends LayoutChangedNotification{
-  LayoutSizeChangeNotification(this.newSize):super();
+class LayoutSizeChangeNotification extends LayoutChangedNotification {
+  LayoutSizeChangeNotification(this.newSize) : super();
   Size newSize;
 }
 
@@ -37,26 +35,21 @@ class LayoutSizeChangeNotification extends LayoutChangedNotification{
 class LayoutSizeChangeNotifier extends SingleChildRenderObjectWidget {
   /// Creates a [SizeChangedLayoutNotifier] that dispatches layout changed
   /// notifications when [child] changes layout size.
-  const LayoutSizeChangeNotifier({
-    Key key,
-    Widget child
-  }) : super(key: key, child: child);
+  const LayoutSizeChangeNotifier({Key key, Widget child})
+      : super(key: key, child: child);
 
   @override
   _SizeChangeRenderWithCallback createRenderObject(BuildContext context) {
-    return new _SizeChangeRenderWithCallback(
-        onLayoutChangedCallback: (size) {
-          new LayoutSizeChangeNotification(size).dispatch(context);
-        }
-    );
+    return new _SizeChangeRenderWithCallback(onLayoutChangedCallback: (size) {
+      new LayoutSizeChangeNotification(size).dispatch(context);
+    });
   }
 }
 
 class _SizeChangeRenderWithCallback extends RenderProxyBox {
-  _SizeChangeRenderWithCallback({
-    RenderBox child,
-    @required this.onLayoutChangedCallback
-  }) : assert(onLayoutChangedCallback != null),
+  _SizeChangeRenderWithCallback(
+      {RenderBox child, @required this.onLayoutChangedCallback})
+      : assert(onLayoutChangedCallback != null),
         super(child);
 
   // There's a 1:1 relationship between the _RenderSizeChangedWithCallback and
@@ -73,8 +66,7 @@ class _SizeChangeRenderWithCallback extends RenderProxyBox {
     super.performLayout();
     // Don't send the initial notification, or this will be SizeObserver all
     // over again!
-    if (size != _oldSize)
-      onLayoutChangedCallback(size);
+    if (size != _oldSize) onLayoutChangedCallback(size);
     _oldSize = size;
   }
 }

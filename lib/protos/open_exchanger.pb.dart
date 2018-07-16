@@ -12,7 +12,6 @@ import 'package:protobuf/protobuf.dart';
 // ignore_for_file: non_constant_identifier_names,library_prefixes
 // ignore: UNUSED_SHOWN_NAME
 
-
 class OxrInput extends GeneratedMessage {
   static final BuilderInfo _i = new BuilderInfo('OxrInput')
     ..aOS(1, 'base')
