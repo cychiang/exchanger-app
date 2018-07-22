@@ -1,7 +1,7 @@
 import 'dart:async';
-
-import 'package:exchanger/protos/open_exchanger.pb.dart';
-import 'package:exchanger/protos/open_exchanger.pbgrpc.dart';
+import 'dart:convert';
+import 'package:exchanger/protos/oxr.pb.dart';
+import 'package:exchanger/protos/oxr.pbgrpc.dart';
 import 'package:grpc/grpc.dart';
 
 // 10.0.2.2: Android for localhost
@@ -9,28 +9,19 @@ import 'package:grpc/grpc.dart';
 
 class API {
   ClientChannel channel;
-  OpenExchangerClient stub;
+  oxrClient stub;
 
   API() {
     channel = new ClientChannel('localhost',
         port: 8080,
         options: const ChannelOptions(
             credentials: const ChannelCredentials.insecure()));
-    stub = new OpenExchangerClient(channel,
+    stub = new oxrClient(channel,
         options: new CallOptions(timeout: new Duration(seconds: 30)));
   }
 
-  Future<List<GrpcRate>> get(OxrInput query) async {
-    List<GrpcRate> list = [];
-    await for (GrpcRate rate in stub.getOxrLatest(query)) {
-      if (rate.currency == "null") {
-        break;
-      } else {
-        list.add(GrpcRate()
-          ..currency = rate.currency
-          ..ratio = rate.ratio);
-      }
-    }
-    return list;
+  Future<Map> get(OxrInput input) async {
+    var output = await stub.get(input);
+    return await json.decode(output.message);
   }
 }

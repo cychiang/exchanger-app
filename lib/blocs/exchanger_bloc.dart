@@ -1,18 +1,17 @@
 import "dart:async";
-
+import 'package:exchanger/protos/oxr.pb.dart';
 import "package:exchanger/apis/exchanger_api.dart";
-import 'package:exchanger/protos/open_exchanger.pb.dart';
 import 'package:rxdart/rxdart.dart';
 
 class ExchangerBloc {
   final API api;
 
-  Stream<List<GrpcRate>> _results = Stream.empty();
+  Stream<Map> _results = Stream.empty();
   Stream<String> _log = Stream.empty();
 
   ReplaySubject<OxrInput> _query = ReplaySubject<OxrInput>();
 
-  Stream<List<GrpcRate>> get results => _results;
+  Stream<Map> get results => _results;
 
   Stream<String> get log => _log;
 

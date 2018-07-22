@@ -1,7 +1,7 @@
 import 'package:exchanger/widgets/currency_card.dart';
 import 'package:exchanger/widgets/exchanger_provider.dart';
 import 'package:exchanger/widgets/exchanger_card_swipe.dart';
-import 'package:exchanger/protos/open_exchanger.pb.dart';
+import 'package:exchanger/protos/oxr.pb.dart';
 import 'package:flutter/material.dart';
 
 class ExchangerHome extends StatefulWidget {
@@ -44,6 +44,7 @@ class _ExchangerHomeState extends State<ExchangerHome>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Exchanger'),
+        backgroundColor: Colors.pink,
       ),
       body: Column(
         children: <Widget>[
@@ -55,6 +56,7 @@ class _ExchangerHomeState extends State<ExchangerHome>
                     // Query data
                     print('Hi');
                     exchangerBloc.query.add(OxrInput()
+                      ..api = 'latest'
                       ..base = 'TWD'
                       ..symbols = 'SEK,JPY,USD');
                     return Center(
