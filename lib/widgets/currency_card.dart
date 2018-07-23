@@ -1,11 +1,13 @@
-import 'package:exchanger/protos/open_exchanger.pb.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyCard extends StatelessWidget {
   // init Currency
-  final GrpcRate grpcRate;
+  final String currencyName;
+  final String currencyRate;
 
-  CurrencyCard({Key key, @required this.grpcRate}) : super(key: key);
+  CurrencyCard(
+      {Key key, @required this.currencyName, @required this.currencyRate})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,10 @@ class CurrencyCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
-            leading: Image.asset(
-                'icons/currency/${grpcRate.currency.toLowerCase()}.png',
+            leading: Image.asset('icons/currency/${this.currencyName}.png',
                 package: 'currency_icons'),
-            title: Text(grpcRate.currency),
-            subtitle: Text(grpcRate.ratio.toString()),
+            title: Text(this.currencyName),
+            subtitle: Text(this.currencyRate),
           ),
         ],
       ),

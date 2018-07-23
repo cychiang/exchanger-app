@@ -48,6 +48,8 @@ class _ExchangerHomeState extends State<ExchangerHome>
       ),
       body: Column(
         children: <Widget>[
+          CurrencyCard(
+              currencyName: 'twd', currencyRate: '100'),
           Flexible(
             child: StreamBuilder(
                 stream: exchangerBloc.results,
@@ -63,8 +65,10 @@ class _ExchangerHomeState extends State<ExchangerHome>
                       child: CircularProgressIndicator(),
                     );
                   }
+                  var count = snapshot.data['rates'].keys.toList();
+                  print(count);
                   return ListView.builder(
-                    itemCount: snapshot.data.length,
+                    itemCount: count,
                     itemBuilder: (context, index) {
                       return new OnSlide(
                         items: <ActionItems>[
@@ -85,7 +89,8 @@ class _ExchangerHomeState extends State<ExchangerHome>
                               onPress: () {},
                               backgroundColor: Colors.white),
                         ],
-                        child: CurrencyCard(grpcRate: snapshot.data[index]),
+                        child: CurrencyCard(
+                            currencyName: 'twd', currencyRate: '100'),
                       );
                     },
                   );
