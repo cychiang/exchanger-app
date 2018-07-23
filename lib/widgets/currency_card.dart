@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CurrencyCard extends StatelessWidget {
   // init Currency
   final String currencyName;
-  final String currencyRate;
+  final num currencyRate;
 
   CurrencyCard(
       {Key key, @required this.currencyName, @required this.currencyRate})
@@ -16,10 +16,11 @@ class CurrencyCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
-            leading: Image.asset('icons/currency/${this.currencyName}.png',
+            leading: Image.asset(
+                'icons/currency/${this.currencyName.toLowerCase()}.png',
                 package: 'currency_icons'),
             title: Text(this.currencyName),
-            subtitle: Text(this.currencyRate),
+            subtitle: Text(this.currencyRate.toString()),
           ),
         ],
       ),

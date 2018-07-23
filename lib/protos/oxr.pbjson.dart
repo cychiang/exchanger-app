@@ -18,7 +18,13 @@ const OxrInput$json = const {
     const {'1': 'StartTime', '3': 10, '4': 1, '5': 9, '10': 'StartTime'},
     const {'1': 'Period', '3': 11, '4': 1, '5': 9, '10': 'Period'},
     const {'1': 'Prettyprint', '3': 12, '4': 1, '5': 8, '10': 'Prettyprint'},
-    const {'1': 'ShowAlternative', '3': 13, '4': 1, '5': 8, '10': 'ShowAlternative'},
+    const {
+      '1': 'ShowAlternative',
+      '3': 13,
+      '4': 1,
+      '5': 8,
+      '10': 'ShowAlternative'
+    },
     const {'1': 'ShowInactive', '3': 14, '4': 1, '5': 8, '10': 'ShowInactive'},
   ],
 };
@@ -30,4 +36,3 @@ const OxrOutput$json = const {
     const {'1': 'message', '3': 2, '4': 1, '5': 9, '10': 'message'},
   ],
 };
-
