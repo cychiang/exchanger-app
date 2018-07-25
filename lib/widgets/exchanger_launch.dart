@@ -1,5 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'dart:io';
+
+// TODO: Write
 
 class ExchangerLaunch extends StatefulWidget {
   @override
@@ -12,17 +15,25 @@ class _ExchangerLaunchState extends State<ExchangerLaunch> {
     return new Timer(_duration, homePage);
   }
 
-  void homePage() {
+  homePage() {
     Navigator.of(context).pushReplacementNamed('/exchanger_home');
   }
 
+  Future<Null> initProcess() async {
+    sleep(new Duration(seconds: 10));
+  }
+
+  Future<Null> timeoutHandler() async {}
   @override
   void initState() {
     super.initState();
     // TODO: Fetch data from API
     // TODO: Timeout handling
     // TODO: Local DB
-    startTime();
+    // TODO: Figure out how timeout works
+    initProcess()
+        .timeout(new Duration(seconds: 3), onTimeout: timeoutHandler)
+        .whenComplete(homePage);
   }
 
   @override

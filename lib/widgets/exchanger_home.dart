@@ -53,8 +53,6 @@ class _ExchangerHomeState extends State<ExchangerHome>
                 stream: exchangerBloc.results,
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
-                    // Query data
-                    print('Hi');
                     exchangerBloc.query.add(OxrInput()
                       ..api = 'latest'
                       ..base = 'TWD'
